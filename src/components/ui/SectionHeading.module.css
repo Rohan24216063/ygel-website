@@ -1,0 +1,59 @@
+.heading {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(26px, 3.2vw, 38px);
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.light .title {
+  color: var(--white);
+}
+
+.light .label {
+  color: #7fd1c8;
+}
+
+.light .text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 640px) {
+  .heading {
+    margin-bottom: 32px;
+  }
+
+  .center {
+    text-align: left;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+}

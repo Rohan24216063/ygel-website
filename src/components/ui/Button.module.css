@@ -1,0 +1,103 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.md {
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 15px;
+}
+
+.sm {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+.lg {
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 16px;
+}
+
+.full {
+  width: 100%;
+}
+
+.primary {
+  color: var(--white);
+  background: var(--accent);
+}
+
+.primary:hover {
+  background: var(--accent-dark);
+}
+
+.dark {
+  color: var(--white);
+  background: var(--navy);
+}
+
+.dark:hover {
+  background: var(--navy-light);
+}
+
+.outline {
+  color: var(--navy);
+  border-color: #cbd2dc;
+  background: var(--white);
+}
+
+.outline:hover {
+  border-color: var(--navy);
+}
+
+.ghost {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+
+.ghost:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  color: var(--navy);
+  background: var(--white);
+}
+
+.light:hover {
+  background: #e9eef4;
+}
+
+.whatsapp {
+  color: var(--white);
+  background: #1e9e55;
+}
+
+.whatsapp:hover {
+  background: #17803f;
+}

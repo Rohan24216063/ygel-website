@@ -1,0 +1,35 @@
+.bar {
+  background: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.group a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s;
+}
+
+.group a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 960px) {
+  .bar {
+    display: none;
+  }
+}

@@ -1,0 +1,158 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.2s;
+}
+
+.scrolled {
+  box-shadow: 0 2px 12px rgba(16, 24, 40, 0.06);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  height: var(--header-h);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.link {
+  position: relative;
+  padding: 8px 14px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.active {
+  color: var(--accent);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: -17px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.drawerFooter {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .link {
+    padding-inline: 10px;
+  }
+
+  .active::after {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .toggle {
+    display: grid;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 120;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 8px 20px 32px;
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.2s,
+      transform 0.2s,
+      visibility 0.2s;
+  }
+
+  .navOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .link {
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+
+  .active::after {
+    display: none;
+  }
+
+  .drawerFooter {
+    display: grid;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .drawerPhone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .drawerPhone svg {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 640px) {
+  .quote {
+    display: none !important;
+  }
+}

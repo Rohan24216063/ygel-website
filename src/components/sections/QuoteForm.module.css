@@ -1,0 +1,89 @@
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.group {
+  display: grid;
+  gap: 8px;
+}
+
+.group label {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.group input,
+.group select,
+.group textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #cbd2dc;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink);
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+}
+
+.group select {
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7489' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.group textarea {
+  resize: vertical;
+}
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14, 138, 128, 0.15);
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.success {
+  background: #ecfdf3;
+  color: #067647;
+}
+
+.error {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

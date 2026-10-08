@@ -1,0 +1,45 @@
+.launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 110;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 8px 22px rgba(10, 34, 64, 0.25);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s var(--ease);
+}
+
+.launcher:hover {
+  background: var(--accent-dark);
+}
+
+.launcherOpen {
+  background: var(--navy);
+}
+
+.launcherOpen:hover {
+  background: var(--navy-light);
+}
+
+@media (max-width: 640px) {
+  .launcher {
+    right: 16px;
+    bottom: calc(64px + 16px + env(safe-area-inset-bottom));
+    width: 54px;
+    height: 54px;
+  }
+
+  .launcherOpen {
+    display: none;
+  }
+}

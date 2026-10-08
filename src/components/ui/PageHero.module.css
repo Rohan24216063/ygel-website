@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  padding-block: 96px;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(10, 34, 64, 0.95) 0%, rgba(10, 34, 64, 0.8) 50%, rgba(10, 34, 64, 0.45) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+}
+
+.crumbs a:hover {
+  color: var(--white);
+}
+
+.crumbs span {
+  color: var(--white);
+}
+
+.hero h1 {
+  max-width: 720px;
+  color: var(--white);
+  font-size: clamp(30px, 4.2vw, 48px);
+}
+
+.hero p {
+  max-width: 600px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-block: 56px;
+  }
+
+  .hero::before {
+    background: rgba(10, 34, 64, 0.85);
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+}
