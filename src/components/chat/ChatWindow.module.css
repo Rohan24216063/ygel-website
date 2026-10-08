@@ -163,7 +163,7 @@
 .user {
   align-self: flex-end;
   border-radius: 14px 4px 14px 14px;
-  background: var(--accent);
+  background: var(--brand-gradient);
   color: var(--white);
   animation: messageIn 0.2s var(--ease);
 }
@@ -202,7 +202,8 @@
 }
 
 .action:hover {
-  background: var(--accent);
+  border-color: transparent;
+  background: var(--brand-gradient);
   color: var(--white);
 }
 
@@ -342,7 +343,7 @@
 .languageChoice button {
   padding: 11px;
   border: 1px solid var(--accent);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   background: var(--white);
   color: var(--accent-dark);
   font-size: 15px;
@@ -351,7 +352,8 @@
 }
 
 .languageChoice button:hover {
-  background: var(--accent);
+  border-color: transparent;
+  background: var(--brand-gradient);
   color: var(--white);
 }
 

@@ -4,14 +4,17 @@
   justify-content: center;
   gap: 8px;
   border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   font-weight: 600;
+  letter-spacing: 0.005em;
   white-space: nowrap;
   cursor: pointer;
   transition:
     background-color 0.2s,
+    background-position 0.4s var(--ease),
     color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .button:disabled {
@@ -25,19 +28,19 @@
 
 .md {
   min-height: 48px;
-  padding: 0 24px;
+  padding: 0 26px;
   font-size: 15px;
 }
 
 .sm {
   min-height: 42px;
-  padding: 0 18px;
+  padding: 0 20px;
   font-size: 14px;
 }
 
 .lg {
   min-height: 52px;
-  padding: 0 28px;
+  padding: 0 30px;
   font-size: 16px;
 }
 
@@ -47,11 +50,15 @@
 
 .primary {
   color: var(--white);
-  background: var(--accent);
+  background-image: var(--brand-gradient);
+  background-size: 160% 100%;
+  background-position: 0% 50%;
+  box-shadow: 0 6px 16px rgba(77, 75, 149, 0.22);
 }
 
 .primary:hover {
-  background: var(--accent-dark);
+  background-position: 100% 50%;
+  box-shadow: 0 8px 22px rgba(102, 49, 147, 0.3);
 }
 
 .dark {
@@ -60,37 +67,42 @@
 }
 
 .dark:hover {
-  background: var(--navy-light);
+  background: var(--purple-dark);
 }
 
 .outline {
   color: var(--navy);
-  border-color: #cbd2dc;
+  border-color: #c9d3de;
   background: var(--white);
 }
 
 .outline:hover {
-  border-color: var(--navy);
+  color: var(--accent-dark);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .ghost {
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.55);
   background: transparent;
 }
 
 .ghost:hover {
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.light {
   color: var(--navy);
+  border-color: var(--white);
   background: var(--white);
 }
 
+.light {
+  color: var(--purple);
+  background: var(--white);
+  box-shadow: 0 6px 16px rgba(10, 34, 64, 0.18);
+}
+
 .light:hover {
-  background: #e9eef4;
+  color: var(--purple-dark);
+  background: var(--purple-soft);
 }
 
 .whatsapp {

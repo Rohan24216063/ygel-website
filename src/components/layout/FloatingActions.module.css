@@ -40,7 +40,7 @@
   }
 
   .mobileBar .quote {
-    background: var(--accent);
+    background: var(--brand-gradient);
     color: var(--white);
   }
 

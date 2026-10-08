@@ -55,7 +55,23 @@
 
 .item button svg {
   flex-shrink: 0;
-  color: var(--accent);
+  box-sizing: content-box;
+  padding: 7px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.item button[aria-expanded="true"] {
+  color: var(--purple);
+}
+
+.item button[aria-expanded="true"] svg {
+  background: var(--brand-gradient);
+  color: var(--white);
 }
 
 .panel {

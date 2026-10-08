@@ -37,7 +37,7 @@
 }
 
 .light .label {
-  color: #7fd1c8;
+  color: var(--accent-light);
 }
 
 .light .text {

@@ -70,6 +70,17 @@
   background: var(--white);
   color: var(--navy);
   cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.toggle:hover,
+.toggle[aria-expanded="true"] {
+  color: var(--accent-dark);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .drawerFooter {

@@ -36,7 +36,7 @@
 
 .caption {
   margin-bottom: 18px;
-  color: #7fd1c8;
+  color: var(--accent-light);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
