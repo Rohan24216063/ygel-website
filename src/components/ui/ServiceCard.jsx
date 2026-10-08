@@ -15,7 +15,7 @@ export default function ServiceCard({ service, detailed = false }) {
         <p>{detailed ? details : summary}</p>
         {detailed ? null : (
           <Link to="/services" className={styles.more}>
-            Learn more
+            <span>Learn more</span>
             <ArrowRight size={15} aria-hidden="true" />
           </Link>
         )}

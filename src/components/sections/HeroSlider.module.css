@@ -35,8 +35,12 @@
 }
 
 .caption {
+  width: fit-content;
   margin-bottom: 18px;
-  color: var(--accent-light);
+  background: var(--brand-text-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;

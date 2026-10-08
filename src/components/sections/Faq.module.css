@@ -58,8 +58,8 @@
   box-sizing: content-box;
   padding: 7px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent-dark);
+  background: var(--brand-gradient-soft);
+  color: var(--white);
   transition:
     background 0.2s,
     color 0.2s;

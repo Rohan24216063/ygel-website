@@ -10,6 +10,10 @@
   --purple-dark: #522577;
   --purple-soft: #f1ebf7;
   --brand-gradient: linear-gradient(120deg, #1a8393 0%, #4d4b95 55%, #663193 100%);
+  --brand-gradient-soft: linear-gradient(135deg, #3aa2b0 0%, #6b6db3 55%, #8a5cb6 100%);
+  --brand-text: linear-gradient(90deg, #17808f 0%, #663193 100%);
+  --brand-text-light: linear-gradient(90deg, #7cc9d3 0%, #c4a6ea 100%);
+  --icon-shadow: 0 6px 14px rgba(77, 75, 149, 0.2);
   --focus-ring: 0 0 0 3px rgba(23, 128, 143, 0.18);
   --radius-pill: 999px;
   --ink: #0f1b2d;

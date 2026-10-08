@@ -23,7 +23,12 @@
 
 .icon {
   flex-shrink: 0;
-  color: var(--accent);
+  box-sizing: content-box;
+  padding: 11px;
+  border-radius: 12px;
+  background: var(--brand-gradient-soft);
+  color: var(--white);
+  box-shadow: var(--icon-shadow);
 }
 
 .head h2 {

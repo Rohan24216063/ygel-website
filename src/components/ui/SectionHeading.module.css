@@ -12,10 +12,18 @@
   text-align: left;
 }
 
+.center .label {
+  margin-inline: auto;
+}
+
 .label {
   display: block;
+  width: fit-content;
   margin-bottom: 12px;
-  color: var(--accent);
+  background: var(--brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -37,7 +45,7 @@
 }
 
 .light .label {
-  color: var(--accent-light);
+  background-image: var(--brand-text-light);
 }
 
 .light .text {
@@ -51,6 +59,10 @@
 
   .center {
     text-align: left;
+  }
+
+  .center .label {
+    margin-inline: 0;
   }
 
   .text {

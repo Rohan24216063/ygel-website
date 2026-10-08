@@ -20,9 +20,10 @@
   width: 52px;
   height: 52px;
   margin-bottom: 22px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-soft);
-  color: var(--accent);
+  border-radius: 12px;
+  background: var(--brand-gradient-soft);
+  color: var(--white);
+  box-shadow: var(--icon-shadow);
 }
 
 .card h3 {
@@ -39,14 +40,21 @@
   align-items: center;
   gap: 6px;
   margin-top: 18px;
-  color: var(--accent);
+  color: var(--purple);
   font-size: 15px;
   font-weight: 600;
 }
 
+.more span {
+  background: var(--brand-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .more:hover {
-  color: var(--accent-dark);
   text-decoration: underline;
+  text-decoration-color: var(--purple);
   text-underline-offset: 3px;
 }
 

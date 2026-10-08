@@ -33,8 +33,12 @@
 
 .list svg {
   flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--accent);
+  box-sizing: content-box;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--brand-gradient-soft);
+  color: var(--white);
+  box-shadow: var(--icon-shadow);
 }
 
 .list h3 {
