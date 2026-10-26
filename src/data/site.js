@@ -39,3 +39,9 @@ export const stats = [
   { value: 98, suffix: "%", label: "Customer Satisfaction" },
 ];
 
+// Returns a stat as display text, e.g. statText("Destinations") -> "200+".
+export const statText = (label) => {
+  const stat = stats.find((s) => s.label === label);
+  return stat ? `${stat.value}${stat.suffix}` : "";
+};
+

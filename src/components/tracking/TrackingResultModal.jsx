@@ -1,6 +1,6 @@
 import {
   AlertCircle, Box, Calendar, CheckCircle2, Clock, FileText, Hash, Layers,
-  Loader2, X, MapPin, PackageCheck, PackageSearch, Phone, Plane, Search, Truck,
+  Loader2, X, MapPin, PackageCheck, PackageSearch, Phone, Plane, Truck,
   User, Building2, ShieldCheck, Tag,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";

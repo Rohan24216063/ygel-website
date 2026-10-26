@@ -2,7 +2,6 @@ import {
   ArrowLeftRight,
   Building2,
   FileText,
-  FlaskConical,
   Headset,
   PackageSearch,
   Pill,

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import aboutImage from "../../assets/images/about-office-v2.webp";
 import { aboutFeatures } from "../../data/company.js";
+import { statText } from "../../data/site.js";
 import Button from "../ui/Button.jsx";
 import Reveal from "../ui/Reveal.jsx";
 import SectionHeading from "../ui/SectionHeading.jsx";
@@ -20,7 +21,7 @@ export default function About() {
             decoding="async"
           />
           <div className={styles.badge}>
-            <strong>11+</strong>
+            <strong>{statText("Years of Experience")}</strong>
             <span>Years of Experience</span>
           </div>
         </Reveal>

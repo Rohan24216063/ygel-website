@@ -4,6 +4,7 @@ import experienceImage from "../../assets/images/why-experience-v2.webp";
 import reachImage from "../../assets/images/why-reach.webp";
 import reliabilityImage from "../../assets/images/why-reliability.webp";
 import { whyUsPoints } from "../../data/company.js";
+import { statText } from "../../data/site.js";
 import Reveal from "../ui/Reveal.jsx";
 import SectionHeading from "../ui/SectionHeading.jsx";
 import styles from "./WhyUs.module.css";
@@ -14,7 +15,7 @@ const slides = [
   {
     src: experienceImage,
     alt: "Yara Global Express worker loading branded parcels into a delivery van in the warehouse",
-    title: "11+",
+    title: statText("Years of Experience"),
     note: "Years of Experience",
     position: "center 58%",
   },
@@ -133,11 +134,11 @@ export default function WhyUs() {
           <dl className={styles.stats}>
             <div>
               <dt>Customer Satisfaction</dt>
-              <dd>98%</dd>
+              <dd>{statText("Customer Satisfaction")}</dd>
             </div>
             <div>
               <dt>Global Destinations</dt>
-              <dd>200+</dd>
+              <dd>{statText("Destinations")}</dd>
             </div>
           </dl>
         </Reveal>

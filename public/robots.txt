@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ygel-website.vercel.app/sitemap.xml
