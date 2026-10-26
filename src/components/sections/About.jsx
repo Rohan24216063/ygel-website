@@ -9,50 +9,61 @@ import styles from "./About.module.css";
 
 export default function About() {
   return (
-    <section className="section" id="about">
+    <section className={`section ${styles.section}`} id="about">
       <div className={`container ${styles.grid}`}>
         <Reveal className={styles.media}>
-          <img
-            src={aboutImage}
-            alt="Yara Global Express team reviewing a shipment plan in the office"
-            width="1024"
-            height="768"
-            loading="lazy"
-            decoding="async"
-          />
+          <div className={styles.frame}>
+            <img
+              src={aboutImage}
+              alt="Yara Global Express team reviewing a shipment plan in the office"
+              width="1024"
+              height="768"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <div className={styles.badge}>
             <strong>{statText("Years of Experience")}</strong>
             <span>Years of Experience</span>
           </div>
         </Reveal>
 
-        <div>
+        <div className={styles.content}>
           <SectionHeading
             align="left"
             label="About Us"
             title="Your Trusted Partner"
-            accent="Beyond Borders."
+            accent="Beyond Borders"
           />
           <Reveal>
             <p className={styles.lead}>
-              Yara Global Express is a professional international courier service helping
-              individuals and businesses send documents and parcels safely around the world.
+              Yara Global Express Ltd. is a Bangladesh-based international courier service
+              provider, dedicated to delivering documents, parcels, and business shipments to
+              destinations worldwide.
             </p>
             <p className={styles.copy}>
-              We focus on dependable service, secure handling, competitive pricing and customer
-              satisfaction.
+              With a strong focus on reliability, secure shipment handling, competitive pricing,
+              and personalized customer support, we strive to provide smooth, efficient, and
+              dependable international shipping solutions for individuals and businesses.
             </p>
-            <ul className={styles.features}>
-              {aboutFeatures.map(({ icon: Icon, title, text }) => (
+
+            <ul className={styles.features} aria-label="Our focus">
+              {aboutFeatures.map(({ icon: Icon, title }) => (
                 <li key={title}>
-                  <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </div>
+                  <Icon size={18} strokeWidth={2} aria-hidden="true" />
+                  <span>{title}</span>
                 </li>
               ))}
             </ul>
+
+            <p className={styles.commitment}>
+              We are committed to building long-term business relationships through professional
+              service, transparent communication, and customer satisfaction—
+              <span className={styles.accent}>
+                connecting Bangladesh with the world, one shipment at a time.
+              </span>
+            </p>
+
             <Button to="/contact" variant="dark" size="lg" icon={ArrowRight} className="cta-touch">
               Get in Touch
             </Button>

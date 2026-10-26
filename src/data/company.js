@@ -1,8 +1,10 @@
-import { BadgeCheck, Earth, HandCoins, Headset, ShieldCheck, Timer } from "lucide-react";
+import { BadgeCheck, HandCoins, Headset, ShieldCheck, Timer } from "lucide-react";
 
 export const aboutFeatures = [
-  { icon: BadgeCheck, title: "Reliable Delivery", text: "Dependable shipping solutions." },
-  { icon: Earth, title: "Global Reach", text: "Delivery across major destinations." },
+  { icon: BadgeCheck, title: "Reliability" },
+  { icon: ShieldCheck, title: "Secure Handling" },
+  { icon: HandCoins, title: "Competitive Pricing" },
+  { icon: Headset, title: "Personal Support" },
 ];
 
 export const whyUsPoints = [
