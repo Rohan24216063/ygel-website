@@ -7,6 +7,11 @@ import { FacebookIcon, WhatsAppIcon } from "../ui/BrandIcons.jsx";
 import Logo from "../ui/Logo.jsx";
 import styles from "./Footer.module.css";
 
+// Footer shows the IP number first; other places keep the site.js order.
+const footerPhones = [...site.phones].sort(
+  (a, b) => Number(b.href.includes("9611")) - Number(a.href.includes("9611")),
+);
+
 const quickLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/#about" },
@@ -82,7 +87,7 @@ export default function Footer() {
                 <Phone size={16} aria-hidden="true" />
               </span>
               <span className={styles.stack}>
-                {site.phones.map((phone) => (
+                {footerPhones.map((phone) => (
                   <a key={phone.href} href={phone.href}>
                     {phone.display}
                   </a>
