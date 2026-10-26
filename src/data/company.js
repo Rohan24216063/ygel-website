@@ -32,7 +32,7 @@ export const faqs = [
   {
     question: "How can I track my shipment?",
     answer:
-      "Enter your DHL Air Waybill or tracking number in the tracking box. Tracking opens on DHL’s official page.",
+      "Enter your AWB / tracking number on our Track Shipment page to see the live status and history of your shipment.",
   },
   {
     question: "What can I send with Yara Global Express?",

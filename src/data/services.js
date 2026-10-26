@@ -1,126 +1,140 @@
 import {
   ArrowLeftRight,
-  Boxes,
   Building2,
   FileText,
-  Globe2,
-  Package,
-  PackageOpen,
-  Plane,
+  FlaskConical,
+  Headset,
+  PackageSearch,
+  Pill,
   Receipt,
   ShieldCheck,
+  Thermometer,
   Truck,
   Zap,
 } from "lucide-react";
 
 export const services = [
   {
-    id: "international-courier",
-    icon: Globe2,
-    title: "International Courier",
-    summary: "Send documents and parcels from Bangladesh to destinations worldwide.",
-    details:
-      "Door-to-door international courier for personal and commercial shipments, with clear transit guidance from pickup to delivery.",
-    showOnHome: true,
-  },
-  {
-    id: "express-delivery",
-    icon: Zap,
-    title: "Express Courier Service",
-    summary: "Time-sensitive shipments handled with priority and care.",
-    details:
-      "Priority handling for urgent documents and parcels when delivery time matters.",
-    showOnHome: true,
-  },
-  {
-    id: "document-delivery",
+    id: "document-parcel",
     icon: FileText,
-    title: "Document & Sample Delivery",
-    summary: "Secure delivery for important personal and business documents.",
+    title: "International Document & Parcel Delivery",
+    summary:
+      "Secure door-to-door delivery of personal and commercial documents and parcels, from booking to final destination.",
     details:
-      "Dedicated handling for passports, certificates, contracts, and commercial samples between Bangladesh and the rest of the world.",
+      "Secure door-to-door delivery of personal and commercial documents and parcels, from booking to final destination.",
     showOnHome: true,
   },
   {
-    id: "parcel-delivery",
-    icon: Package,
-    title: "Parcel Delivery",
-    summary: "Safe shipping for personal and commercial packages.",
+    id: "express-courier",
+    icon: Zap,
+    title: "International Express Courier Services",
+    summary:
+      "Priority express shipping for urgent documents and parcels from Bangladesh to international destinations.",
     details:
-      "Packed and tracked parcel movement with options for economy or express service levels.",
+      "Priority express shipping for urgent documents and parcels from Bangladesh to international destinations.",
     showOnHome: true,
   },
   {
-    id: "corporate-courier",
+    id: "corporate-shipping",
     icon: Building2,
-    title: "Corporate Courier",
-    summary: "Professional logistics solutions for companies and organizations.",
+    title: "Corporate & Business Shipping Solutions",
+    summary:
+      "Reliable, coordinated shipping solutions for businesses with regular document, sample, and goods shipments.",
     details:
-      "Account-based shipping support for offices that send regular international documents and goods.",
+      "Reliable, coordinated shipping solutions for businesses with regular document, sample, and goods shipments.",
     showOnHome: true,
   },
   {
-    id: "global-shipping",
-    icon: Boxes,
-    title: "Global Shipping",
-    summary: "International shipping connecting Bangladesh with the world.",
-    details:
-      "Coverage across major destinations with practical routing for documents, parcels, and commercial cargo.",
-    showOnHome: true,
-  },
-  {
-    id: "imports-exports",
+    id: "import-export",
     icon: ArrowLeftRight,
-    title: "Exports and Imports",
-    summary: "Two-way movement of goods between Bangladesh and overseas markets.",
+    title: "International Import & Export Shipments",
+    summary:
+      "Reliable coordination of international import and export shipments, with assistance in preparing the required shipping documents.",
     details:
-      "Support for export and import shipments, including coordination around required paperwork.",
-    showOnHome: false,
-  },
-  {
-    id: "duties-taxes",
-    icon: Receipt,
-    title: "Delivery With or Without Duties",
-    summary: "Shipments excluding or including duty and taxes.",
-    details:
-      "Guidance on DDU and DDP-style delivery so you can choose how duties and taxes are handled.",
-    showOnHome: false,
+      "Reliable coordination of international import and export shipments, with assistance in preparing the required shipping documents.",
+    showOnHome: true,
   },
   {
     id: "pickup-delivery",
     icon: Truck,
-    title: "Pick Up and Delivery",
-    summary: "Collection and last-mile delivery arranged around your shipment.",
+    title: "Pickup & Delivery Services",
+    summary:
+      "Convenient pickup and reliable delivery of documents and parcels, tailored to your destination and service needs.",
     details:
-      "Pickup from your address and delivery to the destination, depending on the lane and service type.",
-    showOnHome: false,
+      "Convenient pickup and reliable delivery of documents and parcels, tailored to your destination and service needs.",
+    showOnHome: true,
   },
   {
-    id: "customs-clearance",
+    id: "tracking-updates",
+    link: "/tracking",
+    linkLabel: "Track now",
+    icon: PackageSearch,
+    title: "Shipment Tracking & Status Updates",
+    summary:
+      "Track your shipment with your tracking number and receive transit updates from our team.",
+    details:
+      "Track your shipment with your tracking number and receive transit updates from our team.",
+    showOnHome: true,
+  },
+  {
+    id: "customs-updates",
     icon: ShieldCheck,
     title: "Customs Clearance",
-    summary: "Export and import clearance support at Dhaka Airport.",
+    summary:
+      "Assistance with import and export customs clearance, with regular shipment status updates.",
     details:
-      "Customs clearance assistance for export and import shipments moving through Dhaka Airport.",
+      "Assistance with import and export customs clearance, with regular shipment status updates.",
     showOnHome: false,
   },
   {
-    id: "air-freight",
-    icon: Plane,
-    title: "Airport to Airport Air Freight",
-    summary: "Air freight between airports for larger commercial loads.",
+    id: "customer-support",
+    icon: Headset,
+    title: "Customer Service & Support",
+    summary:
+      "Contact our team by phone, WhatsApp, or email for quotations, booking assistance, and shipment support.",
     details:
-      "Airport-to-airport air freight when your shipment is better suited to cargo than a courier bag.",
+      "Contact our team by phone, WhatsApp, or email for quotations, booking assistance, and shipment support.",
     showOnHome: false,
   },
   {
-    id: "packaging",
-    icon: PackageOpen,
-    title: "Packaging Service",
-    summary: "Packaging support so goods travel securely.",
+    id: "duties",
+    icon: Receipt,
+    title: "Delivery with Duties Paid or Unpaid",
+    summary:
+      "Clear duty and tax payment options explained before booking, so you can choose who pays.",
     details:
-      "Practical packing help for documents and parcels before they enter the international network.",
+      "Clear duty and tax payment options explained before booking, so you can choose who pays.",
     showOnHome: false,
+  },
+];
+
+export const pharmaServices = [
+  {
+    id: "pharma-healthcare",
+    icon: Pill,
+    title: "Pharmaceutical & Healthcare Shipments",
+    summary:
+      "Reliable international courier solutions for pharmaceutical and healthcare products, tailored to product requirements and destination needs.",
+    details:
+      "Reliable international courier solutions for pharmaceutical and healthcare products, tailored to product requirements and destination needs.",
+  },
+  {
+    id: "temperature-sensitive",
+    icon: Thermometer,
+    title: "Temperature-Sensitive Shipments",
+    summary:
+      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceutical products.",
+    details:
+      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceutical products.",
+  },
+  {
+    id: "pharma-samples",
+    icon: FileText,
+    title: "Pharmaceutical Sample & Document Delivery",
+    summary:
+      "Secure and reliable international shipping for pharmaceutical samples, dossiers, and business documents worldwide.",
+    details:
+      "Secure and reliable international shipping for pharmaceutical samples, dossiers, and business documents worldwide.",
   },
 ];
 

@@ -10,13 +10,13 @@ export const processSteps = [
   {
     number: "02",
     icon: ClipboardCheck,
-    title: "Book Shipment",
+    title: "Booking Shipment",
     text: "Confirm your shipment details and pricing.",
   },
   {
     number: "03",
     icon: Plane,
-    title: "Pickup & Ship",
+    title: "Pickup & Shipping",
     text: "Your parcel is collected and prepared for international transportation.",
   },
   {

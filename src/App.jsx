@@ -5,6 +5,7 @@ import Layout from "./components/layout/Layout.jsx";
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage.jsx"));
 const ContactPage = lazy(() => import("./pages/ContactPage.jsx"));
+const TrackingPage = lazy(() => import("./pages/TrackingPage.jsx"));
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/tracking" element={<TrackingPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

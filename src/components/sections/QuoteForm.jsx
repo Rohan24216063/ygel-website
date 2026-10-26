@@ -1,5 +1,6 @@
 import { CircleAlert, CircleCheck } from "lucide-react";
 import { useState } from "react";
+import { pharmaServices, services } from "../../data/services.js";
 import { site } from "../../data/site.js";
 import Button from "../ui/Button.jsx";
 import styles from "./QuoteForm.module.css";
@@ -11,7 +12,7 @@ const initial = {
   company: "",
   origin: "Bangladesh",
   destination: "",
-  service: "International Express",
+  service: "International Document & Parcel Delivery",
   packageType: "Documents",
   weight: "",
   message: "",
@@ -139,10 +140,9 @@ export default function QuoteForm() {
         <div className={styles.group}>
           <label htmlFor="quoteService">Service</label>
           <select id="quoteService" name="service" value={values.service} onChange={update}>
-            <option>International Express</option>
-            <option>Economy Courier</option>
-            <option>Document Delivery</option>
-            <option>Parcel Delivery</option>
+            {[...services, ...pharmaServices].map((item) => (
+              <option key={item.id}>{item.title}</option>
+            ))}
           </select>
         </div>
         <div className={styles.group}>

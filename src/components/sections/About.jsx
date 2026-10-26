@@ -1,4 +1,5 @@
-import aboutImage from "../../assets/images/about-trust.webp";
+import { ArrowRight } from "lucide-react";
+import aboutImage from "../../assets/images/about-office-v2.webp";
 import { aboutFeatures } from "../../data/company.js";
 import Button from "../ui/Button.jsx";
 import Reveal from "../ui/Reveal.jsx";
@@ -12,14 +13,14 @@ export default function About() {
         <Reveal className={styles.media}>
           <img
             src={aboutImage}
-            alt="Business handshake representing a trusted partnership"
-            width="1000"
-            height="667"
+            alt="Yara Global Express team reviewing a shipment plan in the office"
+            width="1024"
+            height="768"
             loading="lazy"
             decoding="async"
           />
           <div className={styles.badge}>
-            <strong>10+</strong>
+            <strong>11+</strong>
             <span>Years of Experience</span>
           </div>
         </Reveal>
@@ -51,8 +52,8 @@ export default function About() {
                 </li>
               ))}
             </ul>
-            <Button to="/contact" variant="dark">
-              Contact Our Team
+            <Button to="/contact" variant="dark" size="lg" icon={ArrowRight} className="cta-touch">
+              Get in Touch
             </Button>
           </Reveal>
         </div>

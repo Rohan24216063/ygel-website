@@ -1,4 +1,4 @@
-import { Minus, Phone, Plus } from "lucide-react";
+import { Phone, Plus } from "lucide-react";
 import { useId, useState } from "react";
 import { faqs } from "../../data/company.js";
 import { site } from "../../data/site.js";
@@ -11,7 +11,7 @@ export default function Faq() {
   const baseId = useId();
 
   return (
-    <section className="section" id="faq">
+    <section className={`section ${styles.section}`} id="faq">
       <div className={`container ${styles.grid}`}>
         <div className={styles.intro}>
           <SectionHeading
@@ -35,7 +35,7 @@ export default function Faq() {
             const panelId = `${baseId}-panel-${i}`;
             const buttonId = `${baseId}-button-${i}`;
             return (
-              <div key={item.question} className={styles.item}>
+              <div key={item.question} className={`${styles.item} ${isOpen ? styles.itemOpen : ""}`}>
                 <h3>
                   <button
                     id={buttonId}
@@ -44,12 +44,11 @@ export default function Faq() {
                     aria-controls={panelId}
                     onClick={() => setOpen(isOpen ? -1 : i)}
                   >
-                    <span>{item.question}</span>
-                    {isOpen ? (
-                      <Minus size={18} aria-hidden="true" />
-                    ) : (
-                      <Plus size={18} aria-hidden="true" />
-                    )}
+                    <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={styles.q}>{item.question}</span>
+                    <span className={styles.icon} aria-hidden="true">
+                      <Plus size={18} />
+                    </span>
                   </button>
                 </h3>
                 <div

@@ -1,7 +1,7 @@
 import { ArrowUpRight, RotateCcw, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/yara-logo-96.png";
+import logo from "../../assets/images/yge-logo-192.png";
 import { chatLanguages, chatText, chatTopics, whatsappLink } from "../../data/chatbot.js";
 import { WhatsAppIcon } from "../ui/BrandIcons.jsx";
 import styles from "./ChatWindow.module.css";

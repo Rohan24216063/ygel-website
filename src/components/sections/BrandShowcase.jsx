@@ -1,7 +1,7 @@
 import { Plane, ShieldCheck } from "lucide-react";
 import { useEffect, useRef } from "react";
 import poster from "../../assets/images/cargo-poster.webp";
-import logo from "../../assets/images/yara-logo-320.webp";
+import logo from "../../assets/images/yge-logo-320.webp";
 import styles from "./BrandShowcase.module.css";
 
 const sources = [

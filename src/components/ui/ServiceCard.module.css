@@ -26,6 +26,19 @@
   box-shadow: var(--icon-shadow);
 }
 
+.body {
+  min-width: 0;
+}
+
+.number {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 .card h3 {
   font-size: 19px;
 }

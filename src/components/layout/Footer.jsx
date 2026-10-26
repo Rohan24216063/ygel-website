@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { quotePath, site } from "../../data/site.js";
 import { homeServices } from "../../data/services.js";
@@ -12,7 +12,7 @@ const quickLinks = [
   { label: "About Us", to: "/#about" },
   { label: "Services", to: "/services" },
   { label: "How It Works", to: "/#process" },
-  { label: "Track Shipment", to: "/#tracking" },
+  { label: "Track Shipment", to: "/tracking" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -20,19 +20,19 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer>
-      <section className={styles.cta}>
-        <div className={`container ${styles.ctaInner}`}>
+    <footer className={styles.footer}>
+      <div className={`container ${styles.ctaWrap}`}>
+        <div className={styles.cta}>
           <div>
             <span className={styles.kicker}>Ready To Ship?</span>
             <h2>Let’s Get Your Shipment Moving.</h2>
             <p>Contact us today for shipping information and a personalized quotation.</p>
           </div>
-          <Button to={quotePath} variant="light">
+          <Button to={quotePath} icon={ArrowRight} variant="light">
             Get a Quote
           </Button>
         </div>
-      </section>
+      </div>
 
       <div className={styles.main}>
         <div className={`container ${styles.grid}`}>
@@ -42,9 +42,11 @@ export default function Footer() {
             <div className={styles.social}>
               <a href={site.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon />
+                <span>Facebook</span>
               </a>
               <a href={site.whatsapp} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -58,7 +60,7 @@ export default function Footer() {
             ))}
           </nav>
 
-          <nav className={`${styles.column} ${styles.services}`} aria-label="Services">
+          <nav className={styles.column} aria-label="Services">
             <h3>Services</h3>
             {homeServices.map((item) => (
               <Link key={item.id} to="/services">
@@ -67,14 +69,18 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className={styles.column}>
+          <div className={`${styles.column} ${styles.contact}`}>
             <h3>Contact</h3>
             <p className={styles.contactItem}>
-              <MapPin size={17} aria-hidden="true" />
+              <span className={styles.icon}>
+                <MapPin size={16} aria-hidden="true" />
+              </span>
               <span>{site.address}</span>
             </p>
             <div className={styles.contactItem}>
-              <Phone size={17} aria-hidden="true" />
+              <span className={styles.icon}>
+                <Phone size={16} aria-hidden="true" />
+              </span>
               <span className={styles.stack}>
                 {site.phones.map((phone) => (
                   <a key={phone.href} href={phone.href}>
@@ -84,7 +90,9 @@ export default function Footer() {
               </span>
             </div>
             <p className={styles.contactItem}>
-              <Mail size={17} aria-hidden="true" />
+              <span className={styles.icon}>
+                <Mail size={16} aria-hidden="true" />
+              </span>
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
           </div>
@@ -92,7 +100,9 @@ export default function Footer() {
 
         <div className={`container ${styles.bottom}`}>
           <p>
-            © {year} {site.name} All rights reserved.
+            <span>© {year} {site.name} All rights reserved.</span>
+            <span className={styles.dot} aria-hidden="true" />
+            <span>Dhaka, Bangladesh</span>
           </p>
         </div>
       </div>

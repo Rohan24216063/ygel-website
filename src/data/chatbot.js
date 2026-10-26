@@ -7,7 +7,7 @@ export const chatLanguages = [
 
 export const chatText = {
   en: {
-    title: "YGE Support",
+    title: "YGEL Support",
     status: "Usually replies instantly",
     welcome: "Hello! Welcome to Yara Global Express. 👋",
     welcomeHint: "Choose a question below and I’ll answer right away.",
@@ -25,7 +25,7 @@ export const chatText = {
     footer: "Need a person? Message us on WhatsApp",
   },
   bn: {
-    title: "YGE সাপোর্ট",
+    title: "YGEL সাপোর্ট",
     status: "সাধারণত সাথে সাথেই উত্তর দেয়",
     welcome: "আসসালামু আলাইকুম! Yara Global Express-এ আপনাকে স্বাগতম। 👋",
     welcomeHint: "নিচের যেকোনো প্রশ্নে ট্যাপ করুন, সাথে সাথে উত্তর পেয়ে যাবেন।",
@@ -48,94 +48,78 @@ export function whatsappLink(message) {
   return `${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+const waAction = (message) => ({
+  type: "external",
+  href: `${site.whatsapp}?text=${encodeURIComponent(message)}`,
+  label: { en: "Chat on WhatsApp", bn: "WhatsApp-এ চ্যাট করুন" },
+});
+
 export const chatTopics = [
-  {
-    id: "track",
-    question: {
-      en: "How can I track my shipment?",
-      bn: "আমার শিপমেন্ট কীভাবে ট্র্যাক করব?",
-    },
-    answer: {
-      en: "Enter your DHL Air Waybill or tracking number in the tracking box on our home page. Tracking opens on DHL’s official page.",
-      bn: "আমাদের হোম পেজের ট্র্যাকিং বক্সে আপনার DHL Air Waybill বা ট্র্যাকিং নম্বর লিখুন। ট্র্যাকিং DHL-এর অফিসিয়াল পেজে খুলবে।",
-    },
-    actions: [{ type: "route", to: "/#tracking", label: { en: "Track now", bn: "এখনই ট্র্যাক করুন" } }],
-  },
-  {
-    id: "send",
-    question: {
-      en: "What can I send?",
-      bn: "কী কী পাঠানো যায়?",
-    },
-    answer: {
-      en: "Documents, samples, personal parcels and commercial shipments — from Bangladesh to destinations worldwide.",
-      bn: "ডকুমেন্ট, স্যাম্পল, ব্যক্তিগত পার্সেল এবং বাণিজ্যিক শিপমেন্ট — বাংলাদেশ থেকে বিশ্বের বিভিন্ন গন্তব্যে।",
-    },
-  },
   {
     id: "countries",
     question: {
       en: "Which countries do you deliver to?",
-      bn: "কোন কোন দেশে পাঠানো যায়?",
+      bn: "আপনারা কোন কোন দেশে ডেলিভারি দেন?",
     },
     answer: {
       en: "We deliver to 200+ destinations, including the USA, UK, Canada, Australia, Italy, Germany, UAE, Saudi Arabia, Japan, Singapore and many more.",
-      bn: "আমরা ২০০+ গন্তব্যে ডেলিভারি দিই — যেমন যুক্তরাষ্ট্র, যুক্তরাজ্য, কানাডা, অস্ট্রেলিয়া, ইতালি, জার্মানি, সংযুক্ত আরব আমিরাত, সৌদি আরব, জাপান, সিঙ্গাপুরসহ আরও অনেক দেশে।",
+      bn: "আমরা ২০০+ গন্তব্যে ডেলিভারি দিই - যেমন যুক্তরাষ্ট্র, যুক্তরাজ্য, কানাডা, অস্ট্রেলিয়া, ইতালি, জার্মানি, সংযুক্ত আরব আমিরাত, সৌদি আরব, জাপান, সিঙ্গাপুরসহ আরও অনেক দেশে।",
     },
     actions: [
       { type: "route", to: "/#destinations", label: { en: "See destinations", bn: "গন্তব্যগুলো দেখুন" } },
     ],
   },
   {
-    id: "services",
+    id: "send",
     question: {
-      en: "What services do you offer?",
-      bn: "আপনারা কী কী সেবা দেন?",
+      en: "What items can I send internationally?",
+      bn: "আন্তর্জাতিকভাবে আমি কী কী পণ্য পাঠাতে পারি?",
     },
     answer: {
-      en: "International courier, express courier, document & sample delivery, parcel delivery, corporate courier, exports and imports, delivery with or without duties, pickup and delivery, customs clearance, airport-to-airport air freight and packaging service.",
-      bn: "আন্তর্জাতিক কুরিয়ার, এক্সপ্রেস কুরিয়ার, ডকুমেন্ট ও স্যাম্পল ডেলিভারি, পার্সেল ডেলিভারি, কর্পোরেট কুরিয়ার, এক্সপোর্ট ও ইমপোর্ট, ডিউটিসহ বা ডিউটি ছাড়া ডেলিভারি, পিকআপ ও ডেলিভারি, কাস্টমস ক্লিয়ারেন্স, এয়ারপোর্ট-টু-এয়ারপোর্ট এয়ার ফ্রেইট এবং প্যাকেজিং সার্ভিস।",
+      en: "You can send documents, samples, personal parcels and commercial shipments from Bangladesh to destinations worldwide, subject to the destination country's rules.",
+      bn: "গন্তব্য দেশের নিয়ম মেনে আপনি বাংলাদেশ থেকে বিশ্বের বিভিন্ন গন্তব্যে ডকুমেন্ট, স্যাম্পল, ব্যক্তিগত পার্সেল এবং বাণিজ্যিক শিপমেন্ট পাঠাতে পারেন।",
+    },
+  },
+  {
+    id: "track",
+    question: {
+      en: "How can I track my shipment?",
+      bn: "আমি কীভাবে আমার শিপমেন্ট ট্র্যাক করব?",
+    },
+    answer: {
+      en: "Enter your AWB / tracking number on our Track Shipment page to see the live status, history and details of your shipment.",
+      bn: "আমাদের Track Shipment পেজে আপনার AWB / ট্র্যাকিং নম্বর দিন, শিপমেন্টের সর্বশেষ অবস্থা, ইতিহাস ও বিস্তারিত দেখতে পাবেন।",
+    },
+    actions: [{ type: "route", to: "/tracking", label: { en: "Track now", bn: "এখনই ট্র্যাক করুন" } }],
+  },
+  {
+    id: "services",
+    question: {
+      en: "What international courier services do you offer?",
+      bn: "আপনারা কী কী আন্তর্জাতিক কুরিয়ার সেবা দেন?",
+    },
+    answer: {
+      en: "International document and parcel delivery, express courier, corporate shipping, import and export, pickup and delivery, tracking updates, customs clearance, customer support, duties-paid or unpaid delivery, and courier support for pharmaceutical businesses.",
+      bn: "আন্তর্জাতিক ডকুমেন্ট ও পার্সেল ডেলিভারি, এক্সপ্রেস কুরিয়ার, কর্পোরেট শিপিং, ইমপোর্ট ও এক্সপোর্ট, পিকআপ ও ডেলিভারি, ট্র্যাকিং আপডেট, কাস্টমস ক্লিয়ারেন্স, কাস্টমার সাপোর্ট, ডিউটি পরিশোধিত বা অপরিশোধিত ডেলিভারি, এবং ফার্মাসিউটিক্যাল ব্যবসার জন্য কুরিয়ার সাপোর্ট।",
     },
     actions: [{ type: "route", to: "/services", label: { en: "View all services", bn: "সব সেবা দেখুন" } }],
   },
   {
-    id: "customs",
-    question: {
-      en: "Do you help with customs clearance?",
-      bn: "কাস্টমস ক্লিয়ারেন্সে সাহায্য করেন?",
-    },
-    answer: {
-      en: "Yes. We provide export and import customs clearance support for shipments moving through Dhaka Airport.",
-      bn: "হ্যাঁ। ঢাকা এয়ারপোর্ট দিয়ে যাওয়া-আসা শিপমেন্টের জন্য আমরা এক্সপোর্ট ও ইমপোর্ট কাস্টমস ক্লিয়ারেন্স সাপোর্ট দিই।",
-    },
-  },
-  {
-    id: "duties",
-    question: {
-      en: "Can I choose who pays duties and taxes?",
-      bn: "ডিউটি ও ট্যাক্স কে দেবে, তা কি বেছে নেওয়া যায়?",
-    },
-    answer: {
-      en: "Yes. We guide you on DDU and DDP-style delivery so you can choose shipments excluding or including duty and taxes.",
-      bn: "হ্যাঁ। DDU ও DDP ডেলিভারি নিয়ে আমরা আপনাকে গাইড করি, যাতে আপনি ডিউটি ও ট্যাক্স ছাড়া বা সহ — যেভাবে চান শিপমেন্ট পাঠাতে পারেন।",
-    },
-  },
-  {
     id: "pickup",
     question: {
-      en: "Do you offer pickup and packaging?",
-      bn: "পিকআপ ও প্যাকেজিং সুবিধা আছে?",
+      en: "Do you offer pickup and packaging assistance?",
+      bn: "আপনারা কি পিকআপ ও প্যাকেজিং সহায়তা দেন?",
     },
     answer: {
-      en: "Pickup from your address is available depending on the lane and service type, and we offer packaging support so goods travel securely.",
-      bn: "রুট ও সার্ভিসের ধরন অনুযায়ী আপনার ঠিকানা থেকে পিকআপ করা হয়। আর পণ্য যেন নিরাপদে পৌঁছায়, সেজন্য আমরা প্যাকেজিং সাপোর্টও দিই।",
+      en: "Yes. Pickup from your address is available depending on the route and service type, and we offer packaging assistance so your goods travel securely.",
+      bn: "হ্যাঁ। রুট ও সার্ভিসের ধরন অনুযায়ী আপনার ঠিকানা থেকে পিকআপ করা হয়। আর পণ্য যেন নিরাপদে পৌঁছায়, সেজন্য আমরা প্যাকেজিং সহায়তাও দিই।",
     },
   },
   {
     id: "quote",
     question: {
-      en: "How do I get a quote?",
-      bn: "কোটেশন কীভাবে পাব?",
+      en: "How can I request a shipping quote?",
+      bn: "শিপিং কোটেশনের জন্য কীভাবে অনুরোধ করব?",
     },
     answer: {
       en: "Send us a quote request with your destination, package type and weight, or call and WhatsApp our team directly.",
@@ -144,26 +128,49 @@ export const chatTopics = [
     actions: [{ type: "route", to: quotePath, label: { en: "Get a Quote", bn: "কোটেশন নিন" } }],
   },
   {
-    id: "contact",
+    id: "duties",
     question: {
-      en: "How can I contact you?",
-      bn: "আপনাদের সাথে কীভাবে যোগাযোগ করব?",
+      en: "Can I choose who pays the customs duties and taxes?",
+      bn: "কাস্টমস ডিউটি ও ট্যাক্স কে পরিশোধ করবে, তা কি আমি বেছে নিতে পারি?",
     },
     answer: {
-      en: "You can call us or send an email any time:",
-      bn: "কল করুন অথবা ইমেইল পাঠান:",
+      en: "Yes. We guide you on DDU and DDP-style delivery so you can choose whether duties and taxes are paid by the receiver or included in your shipment.",
+      bn: "হ্যাঁ। DDU ও DDP ধরনের ডেলিভারি নিয়ে আমরা আপনাকে পরামর্শ দিই, যাতে ডিউটি ও ট্যাক্স প্রাপক পরিশোধ করবেন নাকি আপনার শিপমেন্টের সাথেই পরিশোধ হবে - তা আপনি বেছে নিতে পারেন।",
+    },
+  },
+  {
+    id: "customs",
+    question: {
+      en: "Do you assist with customs clearance?",
+      bn: "আপনারা কি কাস্টমস ক্লিয়ারেন্সে সহায়তা করেন?",
+    },
+    answer: {
+      en: "Yes. We provide export and import customs clearance support for shipments moving through Dhaka Airport.",
+      bn: "হ্যাঁ। ঢাকা বিমানবন্দর দিয়ে যাওয়া-আসা শিপমেন্টের জন্য আমরা এক্সপোর্ট ও ইমপোর্ট কাস্টমস ক্লিয়ারেন্স সহায়তা দিই।",
+    },
+  },
+  {
+    id: "contact",
+    question: {
+      en: "How can I contact your customer service team?",
+      bn: "আপনাদের কাস্টমার সার্ভিস টিমের সাথে কীভাবে যোগাযোগ করব?",
+    },
+    answer: {
+      en: "You can reach our customer service team by phone, WhatsApp or email:",
+      bn: "ফোন, WhatsApp অথবা ইমেইলের মাধ্যমে আমাদের কাস্টমার সার্ভিস টিমের সাথে যোগাযোগ করতে পারেন:",
     },
     lines: [...site.phones.map((phone) => phone.display), site.email],
     actions: [
       { type: "external", href: site.phones[0].href, label: { en: "Call now", bn: "এখনই কল করুন" } },
+      waAction("Hello Yara Global Express, I would like to contact your customer service team."),
       { type: "external", href: `mailto:${site.email}`, label: { en: "Send email", bn: "ইমেইল পাঠান" } },
     ],
   },
   {
     id: "office",
     question: {
-      en: "Where is your office?",
-      bn: "আপনাদের অফিস কোথায়?",
+      en: "Where is your office located?",
+      bn: "আপনাদের অফিস কোথায় অবস্থিত?",
     },
     answer: {
       en: `Our office: ${site.address}`,
@@ -171,6 +178,21 @@ export const chatTopics = [
     },
     actions: [
       { type: "external", href: site.mapLink, label: { en: "Open in Google Maps", bn: "Google Maps-এ দেখুন" } },
+    ],
+  },
+  {
+    id: "medicines-food",
+    question: {
+      en: "Can I send personal medicines and food items internationally?",
+      bn: "আমি কি আন্তর্জাতিকভাবে ব্যক্তিগত ওষুধ ও খাদ্যপণ্য পাঠাতে পারি?",
+    },
+    answer: {
+      en: "It depends on the destination country's rules and carrier restrictions. Personal medicines usually need a prescription or doctor's documents and may need to be in their original packaging. Food items must be dry, sealed and commercially packed; perishable or restricted items are not accepted. Please contact our team with the item details and destination before booking so we can confirm.",
+      bn: "এটি গন্তব্য দেশের নিয়ম ও ক্যারিয়ারের বিধিনিষেধের উপর নির্ভর করে। ব্যক্তিগত ওষুধের ক্ষেত্রে সাধারণত প্রেসক্রিপশন বা ডাক্তারের কাগজপত্র লাগে এবং ওষুধ আসল প্যাকেজিংয়ে থাকতে হতে পারে। খাদ্যপণ্য অবশ্যই শুকনো, সিল করা ও বাণিজ্যিকভাবে প্যাক করা হতে হবে; পচনশীল বা নিষিদ্ধ পণ্য গ্রহণ করা হয় না। বুকিংয়ের আগে পণ্যের বিবরণ ও গন্তব্য জানিয়ে আমাদের টিমের সাথে যোগাযোগ করুন, আমরা নিশ্চিত করে জানাব।",
+    },
+    actions: [
+      waAction("Hello Yara Global Express, I want to send personal medicines / food items. Can you confirm if it is allowed?"),
+      { type: "route", to: "/contact", label: { en: "Contact us", bn: "যোগাযোগ করুন" } },
     ],
   },
 ];

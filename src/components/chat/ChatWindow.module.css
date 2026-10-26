@@ -417,3 +417,21 @@
     padding: 10px 16px;
   }
 }
+
+/* Logo-colour buttons */
+.action,
+.languageChoice button {
+  border-color: var(--brand-teal);
+  color: var(--brand-teal-dark);
+}
+.action:hover,
+.languageChoice button:hover {
+  border-color: transparent;
+  background: var(--brand-gradient);
+  color: var(--white);
+}
+.chip:hover {
+  border-color: var(--brand-teal);
+  background: linear-gradient(135deg, rgba(10, 156, 156, 0.08), rgba(95, 53, 146, 0.08));
+  color: var(--brand-purple);
+}

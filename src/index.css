@@ -9,12 +9,19 @@
   --purple: #663193;
   --purple-dark: #522577;
   --purple-soft: #f1ebf7;
-  --brand-gradient: linear-gradient(120deg, #1a8393 0%, #4d4b95 55%, #663193 100%);
+  --brand-teal: #0a9c9c;
+  --brand-teal-dark: #087f82;
+  --brand-purple: #5f3592;
+  --brand-purple-dark: #4b2878;
+  --brand-gradient: linear-gradient(135deg, #087f82 0%, #5f3592 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #0a9c9c 0%, #6b3ea3 100%);
+  --brand-shadow: 0 6px 16px rgba(95, 53, 146, 0.24);
+  --brand-shadow-hover: 0 10px 24px rgba(95, 53, 146, 0.32);
   --brand-gradient-soft: linear-gradient(135deg, #3aa2b0 0%, #6b6db3 55%, #8a5cb6 100%);
   --brand-text: linear-gradient(90deg, #17808f 0%, #663193 100%);
   --brand-text-light: linear-gradient(90deg, #7cc9d3 0%, #c4a6ea 100%);
   --icon-shadow: 0 6px 14px rgba(77, 75, 149, 0.2);
-  --focus-ring: 0 0 0 3px rgba(23, 128, 143, 0.18);
+  --focus-ring: 0 0 0 3px rgba(10, 156, 156, 0.35);
   --radius-pill: 999px;
   --ink: #0f1b2d;
   --text: #4a5568;
@@ -198,4 +205,15 @@ textarea {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Logo-colour buttons */
+button:focus-visible,
+a[class]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(10, 156, 156, 0.35);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }

@@ -1,12 +1,22 @@
 import { useState } from "react";
-import { destinations, flagUrl } from "../../data/destinations.js";
-import Button from "../ui/Button.jsx";
+import { ChevronDown } from "lucide-react";
+import { continents, flagUrl } from "../../data/destinations.js";
 import SectionHeading from "../ui/SectionHeading.jsx";
 import styles from "./Destinations.module.css";
 
 export default function Destinations() {
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? destinations : destinations.filter((item) => item.featured);
+  const [openId, setOpenId] = useState(null);
+
+  function toggle(id) {
+    setOpenId((current) => (current === id ? null : id));
+  }
+
+  function openContinent(id) {
+    setOpenId(id);
+    window.requestAnimationFrame(() => {
+      document.getElementById(`coverage-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   return (
     <section className="section section-muted" id="destinations">
@@ -17,35 +27,66 @@ export default function Destinations() {
           accent="To The World."
           text="We connect Bangladesh with major destinations around the globe."
         />
-        <ul className={styles.grid} id="destination-list">
-          {visible.map((item) => (
-            <li key={item.id} className={styles.card}>
-              <img
-                className={styles.flag}
-                src={flagUrl(item.id)}
-                alt=""
-                width="40"
-                height="30"
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h3>{item.name}</h3>
-                <p>{item.region}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div className={styles.toggle}>
-          <Button
-            type="button"
-            variant="outline"
-            aria-expanded={expanded}
-            aria-controls="destination-list"
-            onClick={() => setExpanded((value) => !value)}
-          >
-            {expanded ? "Show Fewer Destinations" : "More Destinations"}
-          </Button>
+
+        <div className={styles.jumps} role="group" aria-label="Continents">
+          {continents.map((continent) => {
+            const open = openId === continent.id;
+            return (
+              <button
+                key={continent.id}
+                type="button"
+                aria-expanded={open}
+                onClick={() => openContinent(continent.id)}
+              >
+                {continent.name}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className={styles.groups}>
+          {continents.map((continent) => {
+            const open = openId === continent.id;
+            const panelId = `coverage-panel-${continent.id}`;
+            return (
+              <section key={continent.id} id={`coverage-${continent.id}`} className={styles.group}>
+                <h3>
+                  <button
+                    type="button"
+                    className={styles.toggle}
+                    aria-expanded={open}
+                    aria-controls={panelId}
+                    onClick={() => toggle(continent.id)}
+                  >
+                    <span className={styles.name}>{continent.name}</span>
+                    <span className={styles.meta}>
+                      <span className={styles.count}>{continent.countries.length} countries</span>
+                      <span className={styles.action}>{open ? "Hide" : "See countries"}</span>
+                      <ChevronDown size={18} aria-hidden="true" />
+                    </span>
+                  </button>
+                </h3>
+                {open ? (
+                  <ul className={styles.grid} id={panelId}>
+                    {continent.countries.map((country) => (
+                      <li key={country.id} className={styles.card}>
+                        <img
+                          className={styles.flag}
+                          src={flagUrl(country.id)}
+                          alt=""
+                          width="28"
+                          height="20"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span>{country.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </section>
+            );
+          })}
         </div>
       </div>
     </section>

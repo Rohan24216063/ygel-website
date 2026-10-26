@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { banners } from "../../data/banners.js";
 import { quotePath } from "../../data/site.js";
@@ -26,7 +27,7 @@ export default function HeroSlider() {
   }, [autoplay, index, go]);
 
   return (
-    <section className={styles.hero} id="home" aria-label="Yara Global Express">
+    <section className={`${styles.hero} ${banners[index].feature ? styles.featureMode : ""}`} id="home" aria-label="Yara Global Express">
       {banners.map((slide, slideIndex) => (
         <img
           key={slide.caption}
@@ -39,6 +40,7 @@ export default function HeroSlider() {
           loading={slideIndex === 0 ? "eager" : "lazy"}
           fetchPriority={slideIndex === 0 ? "high" : "low"}
           decoding="async"
+          style={{ "--focus-x": slide.focusX, "--focus-y": slide.focusY }}
         />
       ))}
       <div className={styles.overlay} aria-hidden="true" />
@@ -53,7 +55,7 @@ export default function HeroSlider() {
           and businesses.
         </p>
         <div className={styles.actions}>
-          <Button to={quotePath} size="lg">
+          <Button to={quotePath} icon={ArrowRight} size="lg">
             Get a Quote
           </Button>
           <Button to="/services" size="lg" variant="ghost">

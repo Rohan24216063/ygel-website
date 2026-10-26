@@ -113,3 +113,114 @@
 .whatsapp:hover {
   background: #17803f;
 }
+
+/* Logo-colour buttons */
+.button {
+  transition:
+    background-color 0.2s,
+    background-position 0.4s var(--ease),
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s var(--ease);
+}
+
+.primary,
+.dark {
+  color: var(--white);
+  border-color: transparent;
+  background: var(--brand-gradient);
+  box-shadow: var(--brand-shadow);
+}
+
+.primary:hover,
+.dark:hover {
+  background: var(--brand-gradient-hover);
+  box-shadow: var(--brand-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.outline {
+  color: var(--brand-teal-dark);
+  border-color: var(--brand-teal);
+  background: var(--white);
+}
+
+.outline:hover,
+.ghost:hover {
+  color: var(--white);
+  border-color: transparent;
+  background: var(--brand-gradient);
+  box-shadow: var(--brand-shadow);
+  transform: translateY(-1px);
+}
+
+.light {
+  color: var(--brand-purple);
+}
+
+.light:hover {
+  color: var(--brand-purple-dark);
+  transform: translateY(-1px);
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: none;
+}
+
+/* Single clean focus ring: no outline/offset gap; subtle ring for keyboard only */
+.button.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(10, 156, 156, 0.35), var(--brand-shadow);
+}
+
+.button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Gradient buttons: clipped shine sweep on hover, icon nudge */
+.primary,
+.dark {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.primary::after,
+.dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s var(--ease);
+  pointer-events: none;
+}
+
+.primary:hover::after,
+.dark:hover::after {
+  transform: translateX(120%);
+}
+
+.icon {
+  transition: transform 0.2s var(--ease);
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary::after,
+  .dark::after {
+    display: none;
+  }
+}

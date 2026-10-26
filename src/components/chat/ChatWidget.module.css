@@ -47,3 +47,13 @@
     display: none;
   }
 }
+
+/* Logo-colour buttons */
+.launcherOpen {
+  background-image: var(--brand-gradient);
+}
+
+.launcherOpen:hover {
+  background-image: var(--brand-gradient-hover);
+}
+

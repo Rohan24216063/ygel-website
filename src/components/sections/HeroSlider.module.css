@@ -15,6 +15,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center var(--focus-y, 50%);
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -99,7 +100,17 @@
   background: var(--white);
 }
 
+@media (max-width: 960px) {
+  .slide {
+    object-position: var(--focus-x, 62%) var(--focus-y, 50%);
+  }
+}
+
 @media (max-width: 640px) {
+  .slide {
+    object-position: var(--focus-x, 62%) center;
+  }
+
   .hero {
     min-height: 0;
     padding-block: 56px 48px;
@@ -127,5 +138,19 @@
 
   .dots {
     margin-top: 36px;
+  }
+}
+
+/* Feature slide (door to door): left-only overlay on desktop/tablet so the parcel box stays clear.
+   Mobile uses the same layout and overlay as every other slide. */
+@media (min-width: 641px) {
+  .featureMode .overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 34, 64, 0.92) 0%,
+      rgba(10, 34, 64, 0.8) 32%,
+      rgba(10, 34, 64, 0.3) 46%,
+      rgba(10, 34, 64, 0) 54%
+    );
   }
 }

@@ -1,27 +1,36 @@
-import airCargo from "../assets/images/slide-air-cargo.webp";
-import doorToDoor from "../assets/images/slide-door-to-door.webp";
-import flight from "../assets/images/slide-flight.webp";
-import port from "../assets/images/slide-port.webp";
+import customs from "../assets/images/slide-customs-v2.webp";
+import doorToDoor from "../assets/images/slide-door-to-door-v6.webp";
+import globalShipping from "../assets/images/slide-global-shipping.webp";
+import worldwide from "../assets/images/slide-worldwide.webp";
 
 export const banners = [
   {
-    src: airCargo,
-    alt: "Cargo aircraft being loaded at an airport at sunset",
+    src: worldwide,
+    alt: "Night map of shipping routes from Bangladesh to Tokyo, Singapore and Sydney",
     caption: "Worldwide Courier Service",
+    focusX: "64%",
+    focusY: "48%",
   },
   {
     src: doorToDoor,
-    alt: "Courier rider delivering a parcel through the city",
+    alt: "Yara courier handing a parcel to a customer at the door",
     caption: "Door To Door Parcel & Documents Delivery",
+    focusX: "70%",
+    focusY: "48%",
+    feature: true,
   },
   {
-    src: flight,
-    alt: "Aircraft flying overhead through the clouds",
-    caption: "Fast & Reliable Air Cargo",
+    src: globalShipping,
+    alt: "Yara cargo being loaded onto a freight aircraft at night",
+    caption: "Global Shipping",
+    focusX: "70%",
+    focusY: "58%",
   },
   {
-    src: port,
-    alt: "Aerial view of a container port with cranes",
+    src: customs,
+    alt: "Yara courier desk at the airport with an officer reviewing shipments",
     caption: "Customs Clearance Service",
+    focusX: "68%",
+    focusY: "38%",
   },
 ];

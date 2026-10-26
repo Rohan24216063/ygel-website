@@ -1,4 +1,4 @@
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navLinks, quotePath, site } from "../../data/site.js";
@@ -37,7 +37,7 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.bar}`}>
-        <Logo />
+        <Logo compact />
 
         <nav
           id="primary-nav"
@@ -63,7 +63,7 @@ export default function Header() {
             ),
           )}
           <div className={styles.drawerFooter}>
-            <Button to={quotePath} full>
+            <Button to={quotePath} icon={ArrowRight} full>
               Get a Quote
             </Button>
             {site.phones.map((phone) => (
@@ -76,7 +76,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Button to={quotePath} size="sm" className={styles.quote}>
+          <Button to={quotePath} icon={ArrowRight} size="sm" className={styles.quote}>
             Get a Quote
           </Button>
           <button

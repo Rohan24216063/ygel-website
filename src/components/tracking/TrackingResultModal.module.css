@@ -1,0 +1,36 @@
+.overlay {
+  position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 24px;
+  background: rgba(6, 24, 48, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: fade 0.25s ease both;
+}
+.dialog {
+  display: flex; flex-direction: column; width: min(1080px, 100%); max-height: 90vh; overflow: hidden;
+  border-radius: 20px; background: var(--white); box-shadow: 0 30px 80px rgba(6, 24, 48, 0.35);
+  animation: pop 0.32s var(--ease) both; outline: none;
+}
+.bar {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 14px 20px; background: var(--brand-gradient); color: var(--white);
+}
+.barTitle { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+.barTitle strong { letter-spacing: 0.04em; }
+.close {
+  display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18); color: var(--white); cursor: pointer; transition: background 0.2s, transform 0.2s;
+}
+.close:hover { background: rgba(255, 255, 255, 0.3); transform: rotate(90deg); }
+.close:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+.body { overflow-y: auto; overscroll-behavior: contain; padding: 20px; background: var(--surface); }
+.body > div { box-shadow: none; }
+.loading {
+  display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 64px 24px; color: var(--muted);
+}
+@keyframes fade { from { opacity: 0; } }
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(0.96); } }
+@media (max-width: 640px) {
+  .overlay { padding: 0; place-items: end stretch; }
+  .dialog { width: 100%; max-height: 100dvh; height: 100dvh; border-radius: 0; animation-name: sheet; }
+  .body { padding: 12px; }
+  @keyframes sheet { from { transform: translateY(40px); opacity: 0; } }
+}
+@media (prefers-reduced-motion: reduce) { .overlay, .dialog { animation: none; } }
