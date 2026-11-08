@@ -14,14 +14,14 @@ export default function ServicesPage() {
     <>
       <Seo
         title="Services | Yara Global Express Ltd"
-        description="International document and parcel delivery, express courier, corporate shipping, customs updates, and pharmaceutical courier support from Bangladesh."
+        description="International document and parcel delivery, express courier, corporate shipping, customs updates, and pharmaceuticals courier support from Bangladesh."
       />
       <PageHero
         image={heroImage}
         crumb="Services"
         title="International Shipping"
         accent="Built Around Your Needs."
-        text="Documents, express courier, business shipping, customs updates, and dedicated support for pharmaceutical shipments."
+        text="Documents, express courier, business shipping, customs updates, and dedicated support for pharmaceuticals shipments."
       />
       <section className="section section-muted">
         <div className="container">
@@ -42,11 +42,11 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <section className="section" aria-label="Our Support for pharmaceutical & Healthcare business">
+      <section className="section" aria-label="Our Support for Pharmaceuticals & Healthcare Business">
         <div className="container">
           <SectionHeading
-            label="Pharmaceutical"
-            title="Our Support for pharmaceutical & Healthcare business"
+            label="Pharmaceuticals"
+            title="Our Support for Pharmaceuticals & Healthcare Business"
             text="A dedicated service for companies sending medicines, healthcare products, temperature-sensitive consignments, samples, and related documents."
           />
           <div className={styles.grid}>

@@ -99,7 +99,7 @@ export const chatTopics = [
       bn: "আপনারা কী কী আন্তর্জাতিক কুরিয়ার সেবা দেন?",
     },
     answer: {
-      en: "International document and parcel delivery, express courier, corporate shipping, import and export, pickup and delivery, tracking updates, customs clearance, customer support, duties-paid or unpaid delivery, and courier support for pharmaceutical businesses.",
+      en: "International document and parcel delivery, express courier, corporate shipping, import and export, pickup and delivery, tracking updates, customs clearance, customer support, duties-paid or unpaid delivery, and courier support for pharmaceuticals businesses.",
       bn: "আন্তর্জাতিক ডকুমেন্ট ও পার্সেল ডেলিভারি, এক্সপ্রেস কুরিয়ার, কর্পোরেট শিপিং, ইমপোর্ট ও এক্সপোর্ট, পিকআপ ও ডেলিভারি, ট্র্যাকিং আপডেট, কাস্টমস ক্লিয়ারেন্স, কাস্টমার সাপোর্ট, ডিউটি পরিশোধিত বা অপরিশোধিত ডেলিভারি, এবং ফার্মাসিউটিক্যাল ব্যবসার জন্য কুরিয়ার সাপোর্ট।",
     },
     actions: [{ type: "route", to: "/services", label: { en: "View all services", bn: "সব সেবা দেখুন" } }],

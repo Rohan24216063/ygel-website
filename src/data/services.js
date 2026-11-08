@@ -111,29 +111,29 @@ export const pharmaServices = [
   {
     id: "pharma-healthcare",
     icon: Pill,
-    title: "Pharmaceutical & Healthcare Shipments",
+    title: "Pharmaceuticals & Healthcare Shipments",
     summary:
-      "Reliable international courier solutions for pharmaceutical and healthcare products, tailored to product requirements and destination needs.",
+      "Reliable international courier solutions for pharmaceuticals and healthcare products, tailored to product requirements and destination needs.",
     details:
-      "Reliable international courier solutions for pharmaceutical and healthcare products, tailored to product requirements and destination needs.",
+      "Reliable international courier solutions for pharmaceuticals and healthcare products, tailored to product requirements and destination needs.",
   },
   {
     id: "temperature-sensitive",
     icon: Thermometer,
     title: "Temperature-Sensitive Shipments",
     summary:
-      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceutical products.",
+      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceuticals products.",
     details:
-      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceutical products.",
+      "Packing guidance, booking assistance, and suitable shipping options for temperature-sensitive pharmaceuticals products.",
   },
   {
     id: "pharma-samples",
     icon: FileText,
-    title: "Pharmaceutical Sample & Document Delivery",
+    title: "Pharmaceuticals Sample & Document Delivery",
     summary:
-      "Secure and reliable international shipping for pharmaceutical samples, dossiers, and business documents worldwide.",
+      "Secure and reliable international shipping for pharmaceuticals samples, dossiers, and business documents worldwide.",
     details:
-      "Secure and reliable international shipping for pharmaceutical samples, dossiers, and business documents worldwide.",
+      "Secure and reliable international shipping for pharmaceuticals samples, dossiers, and business documents worldwide.",
   },
 ];
 
