@@ -42,9 +42,7 @@ export default function About() {
               destinations worldwide.
             </p>
             <p className={styles.copy}>
-              With a strong focus on reliability, secure shipment handling, competitive pricing,
-              and personalized customer support, we strive to provide smooth, efficient, and
-              dependable international shipping solutions for individuals and businesses.
+              With a strong commitment to reliability, secure shipment handling, competitive pricing, and responsive customer support, we provide efficient and dependable international shipping solutions tailored to the needs of individuals and businesses.
             </p>
 
             <ul className={styles.features} aria-label="Our focus">
